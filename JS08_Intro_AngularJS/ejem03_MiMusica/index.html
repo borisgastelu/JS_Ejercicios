@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <title>Mi Música - AngularJS</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body ng-controller="MainCtrl">
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Mi Música</h1>
+                <p>Miniorganizador de música</p>
+
+                <div class="form-inline">
+                    Canción: <input type="text" class="form-control" ng-model="titulo" />
+                    Autor: <input type="text" class="form-control" ng-model="autor"/>
+                    Tipo: <select class="form-control" ng-model="tipo">
+                        <option value="">- Seleccione -</option>
+                        <option value="Balada">Balada</option>
+                        <option value="Salsa">Salsa</option>
+                        <option value="Rock">Rock</option>
+                    </select>
+                    <a class="btn btn-primary btn-md" href="#" role="button" ng-click="agregar()">Agregar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row form-inline">
+                Filtrar:
+                <input type="text" class="form-control" style="width: 90%" ng-model="textFilter" />
+            </div>
+
+            <div class="row text-right">
+                Ver:
+                <a class="btn btn-link" href="#" role="button" ng-click="cambiarVista()">Mosaico</a> |
+                <a class="btn btn-link" href="#" role="button" ng-click="cambiarVista()">Lista</a>
+            </div>
+
+            <div class="row" ng-if="!esLista">
+                <div class="col-md-3" ng-repeat="cancion in canciones | filter: textFilter ">
+                    <div class="item">
+                        <h2>{{ cancion.titulo }}</h2>
+                        <h4>{{ cancion.autor }} <small>({{ cancion.tipo }})</small></h4>
+
+                        <p><a class="btn btn-link" href="#" role="button">Ver detalles »</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" ng-if="esLista">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Autor</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr ng-repeat="cancion in canciones | filter: textFilter">
+                            <td>{{ cancion.titulo }}</td>
+                            <td>{{ cancion.autor }}</td>
+                            <td>{{ cancion.tipo }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js" charset="utf-8"></script>
+        <script src="js/mainCtrl.js" charset="utf-8"></script>
+    </body>
+</html>

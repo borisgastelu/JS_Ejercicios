@@ -1,0 +1,8 @@
+.item {
+    text-align: center;
+    background-color: #404A4A;
+    border: 2px solid rgba(216, 247, 156, 0.8);
+    padding: 10px;
+    height: 190px;
+    color: #fff;
+}

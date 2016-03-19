@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+    <meta charset="utf-8">
+    <title>Mi Música - AngularJS</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <style>
+        .item {
+            text-align: center;
+            background-color: #404A4A;
+            border: 2px solid rgba(216, 247, 156, 0.8);
+            padding: 10px;
+            height: 190px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Mi Música</h1>
+            <p>Miniorganizador de música</p>
+
+            <div class="form-inline">
+                Canción:
+                <input type="text" class="form-control" /> Autor:
+                <input type="text" class="form-control" /> Tipo:
+                <select class="form-control">
+                    <option value="">- Seleccione -</option>
+                    <option value="Balada">Balada</option>
+                    <option value="Salsa">Salsa</option>
+                    <option value="Rock">Rock</option>
+                </select>
+                <a class="btn btn-primary btn-md" href="#" role="button">Agregar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-inline">
+            Filtrar:
+            <input type="text" class="form-control" style="width: 90%" />
+        </div>
+
+        <br/>
+
+        <div class="text-right">
+            Ver:
+            <a class="btn btn-link" href="#" role="button">Mosaico</a> |
+            <a class="btn btn-link" href="#" role="button">Lista</a>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="item">
+                    <h2>El Aguacero</h2>
+                    <h4>El Gran Combo <small>(Salsa)</small></h4>
+
+                    <p><a class="btn btn-link" href="#" role="button">Ver detalles »</a></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="item">
+                    <h2>Bendita Tu Luz</h2>
+                    <h4>Maná <small>(Balada)</small></h4>
+
+                    <p><a class="btn btn-link" href="#" role="button">Ver detalles »</a></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="item">
+                    <h2>Degeneración Actual</h2>
+                    <h4>Pedro Suarez Vértiz <small>(Rock)</small></h4>
+
+                    <p><a class="btn btn-link" href="#" role="button">Ver detalles »</a></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="item">
+                    <h2>Héroe de Leyenda</h2>
+                    <h4>Héroes del Silencio <small>(Rock)</small></h4>
+
+                    <p><a class="btn btn-link" href="#" role="button">Ver detalles »</a></p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>BSGrupo 2015</p>
+        </footer>
+    </div>
+</body>
+
+</html>
